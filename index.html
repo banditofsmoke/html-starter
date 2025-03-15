@@ -3,73 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lekker Local Business Registration</title>
+    <title>Local Business Marketplace Registration</title>
     <style>
+        :root {
+            --primary-color: #00bcd4;
+            --accent-color: #8bc34a;
+            --dark-bg: #212121;
+            --card-bg: #2d2d2d;
+            --border-color: #424242;
+            --text-color: #e0e0e0;
+            --secondary-text: #9e9e9e;
+        }
+        
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #212121;
-            color: #e0e0e0;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
         }
+        
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #2d2d2d;
-            padding: 20px;
+            background: var(--card-bg);
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
+        
         h1 {
             text-align: center;
-            color: #00bcd4;
+            color: var(--primary-color);
             margin-bottom: 10px;
+            font-size: 28px;
         }
+        
         .tagline {
             text-align: center;
-            font-style: italic;
-            margin-bottom: 30px;
-            color: #8bc34a;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+            font-size: 16px;
         }
+        
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
+        
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #9e9e9e;
+            color: var(--secondary-text);
         }
+        
         input, textarea, select {
             width: 100%;
             padding: 12px;
-            border: 1px solid #424242;
+            border: 1px solid var(--border-color);
             border-radius: 5px;
             font-size: 16px;
             box-sizing: border-box;
             background-color: #333333;
             color: #ffffff;
+            transition: border-color 0.3s;
         }
+        
         input:focus, textarea:focus, select:focus {
-            border-color: #00bcd4;
+            border-color: var(--primary-color);
             outline: none;
         }
+        
         .checkbox-group {
-            margin-top: 5px;
+            margin-top: 8px;
         }
+        
         .checkbox-label {
             font-weight: normal;
             display: flex;
             align-items: center;
             margin-bottom: 8px;
-            color: #e0e0e0;
+            color: var(--text-color);
         }
+        
         .checkbox-label input {
             width: auto;
             margin-right: 10px;
         }
+        
         button {
-            background-color: #8bc34a;
+            background-color: var(--accent-color);
             color: #212121;
             border: none;
             padding: 14px 20px;
@@ -77,45 +101,52 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            margin-top: 10px;
+            margin-top: 15px;
             font-weight: bold;
             transition: background-color 0.3s;
         }
+        
         button:hover {
-            background-color: #9ccc65;
+            opacity: 0.9;
         }
+        
         .info-text {
             font-size: 14px;
-            color: #9e9e9e;
+            color: var(--secondary-text);
             margin-top: 5px;
-            font-style: italic;
         }
+        
         .required:after {
             content: " *";
             color: #f44336;
         }
+        
         .section-title {
-            border-bottom: 1px solid #424242;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
             margin-top: 30px;
-            color: #00bcd4;
+            color: var(--primary-color);
+            font-size: 20px;
         }
-        .funny-note {
+        
+        .panel {
             background-color: #333333;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             margin: 20px 0;
-            border-left: 3px solid #8bc34a;
+            border-left: 3px solid var(--accent-color);
         }
+        
         .file-input-wrapper {
             position: relative;
             overflow: hidden;
             display: inline-block;
             width: 100%;
         }
+        
         .file-input-label {
             background-color: #424242;
-            color: #e0e0e0;
+            color: var(--text-color);
             padding: 10px;
             border-radius: 5px;
             display: inline-block;
@@ -124,6 +155,7 @@
             width: 100%;
             box-sizing: border-box;
         }
+        
         .file-input {
             position: absolute;
             font-size: 100px;
@@ -136,173 +168,172 @@
 </head>
 <body>
     <div class="container">
-        <h1>Join Our Lekker Local Marketplace!</h1>
-        <p class="tagline">Where businesses and customers can find each other without the Facebook drama</p>
+        <h1>Join Our Local Business Marketplace</h1>
+        <p class="tagline">Connecting businesses and customers in the most South African way possible</p>
         
-        <div class="funny-note">
-            <p>🌟 <strong>Hello there, future marketplace superstar!</strong> 🌟</p>
-            <p>You give us your info, we'll give you customers. Fair trade, neh? No more dealing with Facebook's nonsense or trying to sell veggies from a WhatsApp status. We've got you covered, from spaza shops to fancy boutiques!</p>
+        <div class="panel">
+            <p>We're building a community where businesses and customers connect directly - no noise, no spam, just proper connections. You provide your information once, and customers find you easily. Think of it as the digital version of our vibrant local markets!</p>
         </div>
         
         <form action="https://formspree.io/f/xgvavoey" method="POST" enctype="multipart/form-data">
-            <h3 class="section-title">Who Are You, Exactly?</h3>
+            <h3 class="section-title">Business Identity</h3>
             
             <div class="form-group">
-                <label for="business-name" class="required">Your Business Name (The fancier, the better)</label>
-                <input type="text" id="business-name" name="business-name" required placeholder="E.g. Mzansi's Finest Pap & Wors">
+                <label for="business-name" class="required">Business Name</label>
+                <input type="text" id="business-name" name="business-name" required placeholder="Your business name">
             </div>
             
             <div class="form-group">
-                <label for="owner-name">Your Name (or what people shout to get your attention)</label>
-                <input type="text" id="owner-name" name="owner-name" placeholder="E.g. Boss Lady Thandi">
+                <label for="owner-name">Owner/Manager Name</label>
+                <input type="text" id="owner-name" name="owner-name" placeholder="Who runs this enterprise?">
             </div>
             
-            <h3 class="section-title">How Do We Reach You?</h3>
+            <h3 class="section-title">Contact Details</h3>
             
             <div class="form-group">
-                <label for="phone" class="required">Cell Number (We promise, no "Please Call Me"s)</label>
-                <input type="tel" id="phone" name="phone" required placeholder="E.g. 073 123 4567">
-            </div>
-            
-            <div class="form-group">
-                <label for="whatsapp">WhatsApp Number (For when the load shedding hits)</label>
-                <input type="tel" id="whatsapp" name="whatsapp" placeholder="Same as above? Just leave it blank, sharp-sharp">
+                <label for="phone" class="required">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Your reliable contact number">
             </div>
             
             <div class="form-group">
-                <label for="email">Email Address (No, we won't send you Nigerian prince offers)</label>
-                <input type="email" id="email" name="email" placeholder="E.g. hustle@mzansi.co.za">
-                <p class="info-text">Your email is safer with us than your last R200 before payday.</p>
-            </div>
-            
-            <h3 class="section-title">Your Online Footprint</h3>
-            
-            <div class="form-group">
-                <label for="website">Website (If you're fancy enough to have one)</label>
-                <input type="url" id="website" name="website" placeholder="https://www.yourawesome.biz">
+                <label for="whatsapp">WhatsApp Number (if different)</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="Your WhatsApp number if different">
             </div>
             
             <div class="form-group">
-                <label for="facebook">Facebook Link (The one place people can find you between load shedding)</label>
-                <input type="url" id="facebook" name="facebook" placeholder="https://www.facebook.com/yourbusiness">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your email address">
+                <p class="info-text">We respect your privacy and won't share your information unnecessarily.</p>
             </div>
             
-            <h3 class="section-title">What Are You Selling, My China?</h3>
+            <h3 class="section-title">Digital Presence</h3>
             
             <div class="form-group">
-                <label for="business-type" class="required">Type of Business (Choose one, we're not SARS)</label>
+                <label for="website">Website (if available)</label>
+                <input type="url" id="website" name="website" placeholder="https://your-website.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="facebook">Facebook Profile/Page</label>
+                <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/your-page">
+            </div>
+            
+            <h3 class="section-title">Business Information</h3>
+            
+            <div class="form-group">
+                <label for="business-type" class="required">Type of Business</label>
                 <select id="business-type" name="business-type" required>
-                    <option value="">-- What's your hustle? --</option>
-                    <option value="food-vendor">Food/Produce (Feeding the nation!)</option>
-                    <option value="retail">Retail Shop (Selling the goods)</option>
-                    <option value="service">Service Provider (Fixing what's broken)</option>
-                    <option value="crafts">Arts & Crafts (Making beautiful things)</option>
-                    <option value="other">Other (We won't judge...much)</option>
+                    <option value="">-- Select Type --</option>
+                    <option value="food-vendor">Food/Produce Vendor</option>
+                    <option value="retail">Retail Shop</option>
+                    <option value="service">Professional Services</option>
+                    <option value="crafts">Arts & Crafts</option>
+                    <option value="technology">Technology & Digital</option>
+                    <option value="other">Other</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <label for="products-services" class="required">What Do You Offer? (Be lekker specific)</label>
-                <textarea id="products-services" name="products-services" rows="4" required placeholder="E.g. The best boerewors this side of the Limpopo, handmade beaded jewelry that will make your mother-in-law finally approve of you, etc."></textarea>
+                <label for="products-services" class="required">Products or Services Offered</label>
+                <textarea id="products-services" name="products-services" rows="4" required placeholder="Describe what you offer to customers"></textarea>
             </div>
             
             <div class="form-group">
-                <label for="location" class="required">Where Are You? (So people don't drive to Bloemfontein looking for you in Cape Town)</label>
-                <textarea id="location" name="location" rows="3" required placeholder="E.g. That corner by the big tree near the taxi rank in Soweto, or 123 Main Road, Sandton (for the fancy folks)"></textarea>
+                <label for="location" class="required">Business Location</label>
+                <textarea id="location" name="location" rows="3" required placeholder="Physical address or description of your location"></textarea>
             </div>
             
             <div class="form-group">
-                <label for="operation-hours">When Are You Open? (Besides 'African time')</label>
-                <textarea id="operation-hours" name="operation-hours" rows="3" placeholder="E.g. Mon-Fri: 9ish to 5ish, Sat: When I feel like it, Sun: Only if you call first"></textarea>
+                <label for="operation-hours">Operating Hours</label>
+                <textarea id="operation-hours" name="operation-hours" rows="3" placeholder="When customers can find you open for business"></textarea>
             </div>
             
-            <h3 class="section-title">Show Off A Bit!</h3>
+            <h3 class="section-title">Visual Identity</h3>
             
             <div class="form-group">
-                <label>Got Some Nice Pictures? (No, not those kinds of pictures!)</label>
+                <label>Would you like to upload business photos?</label>
                 <div class="checkbox-group">
                     <label class="checkbox-label">
                         <input type="radio" name="has-photos" value="yes" onclick="document.getElementById('photo-upload').style.display='block'">
-                        Ja! Let me show off my stuff now
+                        Yes, I have photos to upload now
                     </label>
                     <label class="checkbox-label">
                         <input type="radio" name="has-photos" value="no" onclick="document.getElementById('photo-upload').style.display='none'">
-                        Ag no man, I'll do it later
+                        No, I'll add photos later
                     </label>
                 </div>
             </div>
             
             <div class="form-group" id="photo-upload" style="display:none">
-                <label for="business-photos">Upload Your Photos (Make them look good, hey!)</label>
+                <label for="business-photos">Upload Business Photos</label>
                 <div class="file-input-wrapper">
-                    <label class="file-input-label">Choose Files</label>
+                    <label class="file-input-label">Select Images</label>
                     <input type="file" id="business-photos" name="business-photos" multiple accept="image/*" class="file-input">
                 </div>
-                <p class="info-text">Each photo must be smaller than 5MB (that's like, a R5 coin in digital size)</p>
+                <p class="info-text">Maximum file size: 5MB per image</p>
             </div>
             
-            <h3 class="section-title">Just A Few More Things...</h3>
+            <h3 class="section-title">Business Operations</h3>
             
             <div class="form-group">
-                <label for="delivery">How Do You Get Stuff To People?</label>
+                <label for="delivery">How do you fulfill orders?</label>
                 <div class="checkbox-group">
                     <label class="checkbox-label">
-                        <input type="checkbox" name="delivery-options" value="pickup"> Customers come to me (I'm worth the trip!)
+                        <input type="checkbox" name="delivery-options" value="pickup"> Customer collection available
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="delivery-options" value="local-delivery"> I deliver locally (faster than Eskom fixes power lines)
+                        <input type="checkbox" name="delivery-options" value="local-delivery"> Local delivery service
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="delivery-options" value="shipping"> I ship nationwide (like a boss)
+                        <input type="checkbox" name="delivery-options" value="shipping"> National shipping
                     </label>
                 </div>
             </div>
             
             <div class="form-group">
-                <label for="payment-methods">How Do You Take Money? (Everyone's favorite question)</label>
+                <label for="payment-methods">Payment Methods Accepted</label>
                 <div class="checkbox-group">
                     <label class="checkbox-label">
-                        <input type="checkbox" name="payment-methods" value="cash"> Cash (the old reliable)
+                        <input type="checkbox" name="payment-methods" value="cash"> Cash
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="payment-methods" value="card"> Card (swipe, tap, or pray it works)
+                        <input type="checkbox" name="payment-methods" value="card"> Credit/Debit Cards
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="payment-methods" value="mobile-money"> Mobile Money (for the tech-savvy)
+                        <input type="checkbox" name="payment-methods" value="mobile-money"> Mobile Money/EFT
                     </label>
                     <label class="checkbox-label">
-                        <input type="checkbox" name="payment-methods" value="other"> Other (Cows, chickens, firstborn children...)
+                        <input type="checkbox" name="payment-methods" value="other"> Other Methods
                     </label>
                 </div>
             </div>
             
             <div class="form-group">
-                <label for="additional-info">Anything Else? (Your chance to brag a bit more)</label>
-                <textarea id="additional-info" name="additional-info" rows="3" placeholder="Tell us what makes your business lekker special!"></textarea>
+                <label for="additional-info">Additional Information</label>
+                <textarea id="additional-info" name="additional-info" rows="3" placeholder="Any other details that would help customers find and work with you"></textarea>
             </div>
             
-            <div class="funny-note">
-                <p>Almost done! Just need your consent so we don't get in trouble with those legal okes.</p>
+            <div class="panel">
+                <p>Your information will be used to create a business profile in our marketplace, making it easier for potential customers to discover and connect with you.</p>
             </div>
             
             <div class="form-group">
                 <label class="checkbox-label">
                     <input type="checkbox" name="consent" required>
-                    <span class="required">Yes, I agree to be part of this awesome marketplace. No turning back now!</span>
+                    <span class="required">I consent to having my business information listed in the marketplace</span>
                 </label>
             </div>
             
-            <button type="submit">Submit & Join The Cool Kids!</button>
+            <button type="submit">Submit Your Business Profile</button>
         </form>
         
-        <div class="funny-note" style="margin-top: 30px;">
-            <p>Thanks for sharing your details! We'll create a safe space where customers can find you without scrolling through endless Facebook drama and cat videos.</p>
-            <p>Connecting businesses and customers, one click at a time. <strong>Now that's properly South African!</strong></p>
+        <div class="panel" style="margin-top: 30px;">
+            <p>By submitting this form, you're joining a network that celebrates local business and innovation. Your profile will help bridge the gap between small businesses and customers looking for quality local options.</p>
         </div>
     </div>
 
     <script>
-        // Simple form validation
+        // Form validation
         document.querySelector('form').addEventListener('submit', function(e) {
             const requiredFields = document.querySelectorAll('[required]');
             let valid = true;
@@ -318,7 +349,7 @@
             
             if (!valid) {
                 e.preventDefault();
-                alert('Eish! Looks like you missed some required fields. Check the ones marked in red!');
+                alert('Please complete all required fields before submitting.');
             }
         });
     </script>
